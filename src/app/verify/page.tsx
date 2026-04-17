@@ -107,7 +107,11 @@ export default function VerifyPage() {
 
       if (error) throw error
 
-      setVotedExamIds(prev => new Set([...prev, currentExam.id]))
+      setVotedExamIds(prev => {
+        const newSet = new Set(prev)
+        newSet.add(currentExam.id)
+        return newSet
+      })
       setShowModal(false)
       setReason('')
       setVoteType(null)
