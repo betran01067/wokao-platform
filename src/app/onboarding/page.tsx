@@ -101,7 +101,7 @@ export default function OnboardingPage() {
             <input
               type="text"
               placeholder="搜索课程名称或编号..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -137,9 +137,9 @@ export default function OnboardingPage() {
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-medium text-gray-900">{course.name}</h3>
+                      <h3 className="font-medium text-gray-900 font-bold">{course.name}</h3>
                       {course.code && (
-                        <p className="text-sm text-gray-500 mt-1">{course.code}</p>
+                        <p className="text-sm text-gray-600 mt-1">{course.code}</p>
                       )}
                     </div>
                     {selectedCourses.includes(course.id) && (
