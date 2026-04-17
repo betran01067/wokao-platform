@@ -59,8 +59,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-primary-600 mb-2">我考</h1>
-            <p className="text-gray-600">大学课程真题共享平台</p>
+            <h1 className="text-7xl font-bold text-primary-600 mb-4">我考</h1>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             {isLogin ? '登录账户' : '注册账户'}
@@ -146,13 +145,6 @@ export default function LoginPage() {
             </button>
           </div>
         </form>
-
-        {isLogin && (
-          <div className="mt-6 text-center text-sm text-gray-600">
-            <p>演示账号：demo@wokao.edu.cn / demo123</p>
-            <p className="mt-1">注册后可获得10积分</p>
-          </div>
-        )}
       </div>
     </div>
   )
