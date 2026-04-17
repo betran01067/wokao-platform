@@ -108,9 +108,12 @@ export default function UploadPage() {
   }
 
   const removeImage = (index: number) => {
+    const previewToRemove = imagePreviews[index]
+    if (previewToRemove) {
+      URL.revokeObjectURL(previewToRemove)
+    }
     setImages(prev => prev.filter((_, i) => i !== index))
     setImagePreviews(prev => prev.filter((_, i) => i !== index))
-    URL.revokeObjectURL(prev[index])
   }
 
   const handleSubmit = async (e: React.FormEvent) => {

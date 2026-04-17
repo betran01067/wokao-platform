@@ -10,13 +10,13 @@
 6. [第六步：配置环境变量](#第六步配置环境变量)
 7. [第七步：绑定自定义域名](#第七步绑定自定义域名)
 
----
+***
 
 ## 第一步：创建 GitHub 仓库
 
 ### 1.1 注册 GitHub 账号
 
-1. 打开浏览器，访问 https://github.com
+1. 打开浏览器，访问 <https://github.com>
 2. 点击 **"Sign up"**（注册）
 3. 填写信息：
    - Email：你的邮箱
@@ -46,13 +46,13 @@ https://github.com/你的用户名/wokao-platform.git
 
 **注意**：把"你的用户名"替换成你注册时的用户名。
 
----
+***
 
 ## 第二步：安装 Git
 
 ### 2.1 下载 Git
 
-1. 打开浏览器访问：https://git-scm.com/download/win
+1. 打开浏览器访问：<https://git-scm.com/download/win>
 2. 点击 **"Click here to download"**
 3. 下载会自动开始
 
@@ -64,7 +64,7 @@ https://github.com/你的用户名/wokao-platform.git
 4. **组件选择**，勾选：
    - ✅ **"Git Bash Here"** ← 重要！
    - ✅ **"Git GUI Here"**
-   - ✅ **"Associate .git* configuration files with the default text editor"**
+   - ✅ *"Associate .git* configuration files with the default text editor"\*
 5. 点击 **"Next"**
 6. **调整 PATH**，选择 **"Git from the command line and also from 3rd-party software"**
 7. 点击 **"Next"**
@@ -77,10 +77,12 @@ https://github.com/你的用户名/wokao-platform.git
 1. 按 **Windows键 + R**
 2. 输入 **cmd**，回车
 3. 在黑色窗口输入：
+
 ```bash
 git --version
 ```
-4. 如果显示 `git version 2.x.x.windows.x`，说明安装成功！
+
+1. 如果显示 `git version 2.x.x.windows.x`，说明安装成功！
 
 ### 2.4 配置 Git
 
@@ -94,7 +96,7 @@ git config --global user.name "你的GitHub用户名"
 git config --global user.email "your.email@example.com"
 ```
 
----
+***
 
 ## 第三步：上传代码到 GitHub
 
@@ -103,6 +105,7 @@ git config --global user.email "your.email@example.com"
 1. 按 **Windows键 + R**
 2. 输入 **cmd**，回车
 3. 进入项目目录：
+
 ```bash
 cd c:\Users\Betran\Desktop\wokao
 ```
@@ -119,10 +122,11 @@ git init
 git add .
 
 # 3. 提交到本地仓库
-git commit -m "Wokao v2.0 - 完整版本"
+
+
 
 # 4. 添加远程仓库地址（把"你的用户名"换成你的）
-git remote add origin https://github.com/你的用户名/wokao-platform.git
+git remote add origin https://github.com/betran01067/wokao-platform.git
 
 # 5. 推送到 GitHub（第一次需要输入用户名和密码）
 git branch -M main
@@ -138,19 +142,20 @@ git push -u origin main
 ### 3.4 验证成功
 
 打开浏览器，访问你的 GitHub 仓库：
+
 ```
-https://github.com/你的用户名/wokao-platform
+https://github.com/betran01067/wokao-platform
 ```
 
 应该能看到你的所有代码文件！
 
----
+***
 
 ## 第四步：注册 Vercel
 
 ### 4.1 访问 Vercel
 
-1. 打开浏览器访问：https://vercel.com
+1. 打开浏览器访问：<https://vercel.com>
 2. 点击 **"Sign Up"**
 
 ### 4.2 创建账号
@@ -158,10 +163,12 @@ https://github.com/你的用户名/wokao-platform
 有两种方式（推荐第一种）：
 
 **方式 A：使用 GitHub 登录（最简单）**
+
 1. 点击 **"Continue with GitHub"**
 2. 授权页面点击 **"Authorize"**
 
 **方式 B：使用邮箱注册**
+
 1. 输入邮箱地址
 2. 点击 **"Continue"**
 3. 去邮箱查收验证邮件
@@ -172,13 +179,13 @@ https://github.com/你的用户名/wokao-platform
 1. 输入你的名字（随便填）
 2. 点击 **"Continue"**
 
----
+***
 
 ## 第五步：连接 GitHub 并部署
 
 ### 5.1 添加新项目
 
-1. 登录 Vercel 后，点击 **"Add New..."** 按钮
+1. 登录 Vercel 后，点击 **"Add New\..."** 按钮
 2. 选择 **"Project"**
 
 ### 5.2 导入 GitHub 仓库
@@ -194,23 +201,29 @@ https://github.com/你的用户名/wokao-platform
 #### 5.3.1 设置构建命令
 
 **Framework Preset** 选择：
+
 ```
 Next.js
 ```
+
 （Vercel 通常会自动识别）
 
 **Build Command** 保持默认：
+
 ```
 npm run build
 ```
 
 **Output Directory** 保持默认：
+
 ```
 .auto
 ```
+
 （或者 `.next`）
 
 **Install Command** 保持默认：
+
 ```
 npm install
 ```
@@ -223,12 +236,14 @@ npm install
 2. 点击 **"Add"** 按钮
 
 添加**第一个变量**：
+
 - **NAME**: `NEXT_PUBLIC_SUPABASE_URL`
 - **VALUE**: `https://你的项目.supabase.co`
   （去 Supabase 仪表板 → Settings → API 复制）
 - **ENVIRONMENTS**: 全部勾选 ✅
 
 添加**第二个变量**：
+
 - **NAME**: `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - **VALUE**: `你的anon_key`
   （去 Supabase 仪表板 → Settings → API 复制）
@@ -256,13 +271,14 @@ npm install
 看到绿色 ✅ **"Congratulations!"** 页面！
 
 Vercel 会给你一个临时域名：
+
 ```
 https://wokao-platform.vercel.app
 ```
 
 点击访问测试一下！
 
----
+***
 
 ## 第六步：配置环境变量（补充）
 
@@ -276,7 +292,7 @@ https://wokao-platform.vercel.app
 
 ### 6.2 添加或修改变量
 
-1. 点击 **"Add New..."**
+1. 点击 **"Add New\..."**
 2. 填写：
    - **NAME**: `NEXT_PUBLIC_SUPABASE_URL`
    - **VALUE**: 你的 Supabase URL
@@ -284,6 +300,7 @@ https://wokao-platform.vercel.app
 3. 点击 **"Save"**
 
 同样添加：
+
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 ### 6.3 重新部署
@@ -295,7 +312,7 @@ https://wokao-platform.vercel.app
 3. 选择 **"Redeploy"**
 4. 点击 **"Redeploy"** 确认
 
----
+***
 
 ## 第七步：绑定自定义域名
 
@@ -322,16 +339,19 @@ Vercel 会显示需要配置的 DNS 记录。
 根据你的域名在哪买的：
 
 **阿里云：**
-1. 访问 https://dns.console.aliyun.com
+
+1. 访问 <https://dns.console.aliyun.com>
 2. 登录你的账号
 3. 点击你的域名
 
 **腾讯云：**
-1. 访问 https://console.dnspod.cn
+
+1. 访问 <https://console.dnspod.cn>
 2. 登录你的账号
 3. 点击你的域名
 
 **其他域名商：**
+
 - 找到 DNS 解析设置页面
 
 #### 7.3.2 添加 DNS 记录
@@ -339,6 +359,7 @@ Vercel 会显示需要配置的 DNS 记录。
 在域名管理页面，添加记录：
 
 **记录 1（A 记录）**
+
 ```
 类型: A
 主机记录: @
@@ -347,6 +368,7 @@ TTL: 600
 ```
 
 **记录 2（CNAME 记录，可选）**
+
 ```
 类型: CNAME
 主机记录: www
@@ -363,12 +385,14 @@ TTL: 600
 ### 7.5 完成！
 
 DNS 配置生效后，你就可以通过：
+
 ```
 http://wokaoxuebudongle
 ```
+
 访问你的网站了！
 
----
+***
 
 ## 🎉 恭喜！你已完成部署！
 
@@ -377,22 +401,25 @@ http://wokaoxuebudongle
 现在你的网站可以通过以下地址访问：
 
 **Vercel 临时域名**：
+
 ```
 https://wokao-platform.vercel.app
 ```
 
 **或你的自定义域名**：
+
 ```
 http://wokaoxuebudongle
 ```
 
----
+***
 
 ## 📞 遇到问题？
 
 ### 问题 1：Git push 需要用户名密码
 
 **解决**：
+
 1. 在 GitHub 头像 → Settings → Developer settings
 2. Personal access tokens → Generate new token
 3. 生成一个 token（勾选 repo）
@@ -401,6 +428,7 @@ http://wokaoxuebudongle
 ### 问题 2：Vercel 部署失败
 
 **解决**：
+
 1. 查看部署日志的具体错误信息
 2. 常见问题：
    - 环境变量未配置 → 重新配置
@@ -410,6 +438,7 @@ http://wokaoxuebudongle
 ### 问题 3：环境变量配置错误
 
 **解决**：
+
 1. 删除错误的变量
 2. 重新添加正确的值
 3. 重新部署
@@ -417,11 +446,12 @@ http://wokaoxuebudongle
 ### 问题 4：自定义域名无法访问
 
 **解决**：
+
 1. 等待 DNS 生效（最多48小时）
-2. 用 https://tool.chinaz.com 检查 DNS
+2. 用 <https://tool.chinaz.com> 检查 DNS
 3. 确认 DNS 记录正确
 
----
+***
 
 ## ✅ 检查清单
 
@@ -435,7 +465,7 @@ http://wokaoxuebudongle
 - [ ] 用户注册/登录正常
 - [ ] 主要功能测试通过
 
----
+***
 
 ## 🎯 后续维护
 
@@ -467,7 +497,7 @@ Vercel 会自动检测到更新并重新部署。
 2. 选择之前正常的版本
 3. 点击 **"..."** → **"Promote to Production"**
 
----
+***
 
 **恭喜！你的"我考"平台已经成功上线！** 🚀
 
