@@ -163,9 +163,14 @@ export default function VerifyPage() {
 
   const handleImageRetry = (examId: string, imageIndex: number) => {
     const key = `${examId}-${imageIndex}`
+    const currentState = imageStates[key] || { loaded: false, error: false, retryCount: 0 }
     setImageStates(prev => ({
       ...prev,
-      [key]: { loaded: false, error: false, retryCount: (prev[key]?.retryCount || 0) + 1 }
+      [key]: { 
+        loaded: false, 
+        error: false, 
+        retryCount: currentState.retryCount + 1 
+      }
     }))
   }
 
@@ -272,8 +277,8 @@ export default function VerifyPage() {
                       ) : (
                         <div className="relative">
                           <img
-                            key={state.retryCount}
-                            src={`${image}${state.retryCount > 0 ? `?t=${Date.now()}` : ''}`}
+                            key={`${currentExam.id}-${index}-${state.retryCount}`}
+                            src={image}
                             alt={`题目图片 ${index + 1}`}
                             className={`w-full rounded-lg max-h-[600px] object-contain ${state.loaded ? 'block' : 'hidden'}`}
                             onLoad={() => handleImageLoad(currentExam.id, index)}
